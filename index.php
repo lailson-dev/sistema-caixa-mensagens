@@ -9,8 +9,9 @@
 <body>
 
 	<section class="container mt-5">
-		<div class="row">
+		<div class="row">			
 			<div class="offset-md-3 col-md-6 border border-light">
+				<h1 class="display-4 text-center">Entre em contato</h1>
 				<form action="" method="POST" class="m-2">
 					<div class="form-group">
 						<label for="name" class="form-control-label">Nome</label>
