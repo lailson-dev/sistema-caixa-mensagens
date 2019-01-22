@@ -1,3 +1,10 @@
+<?php
+
+include "functions/config.php";
+
+$select = $db->prepare("SELECT * FROM emails");
+$select->execute();
+?>
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -32,8 +39,9 @@
 						if(!isset($_GET['page']) || $_GET['page'] == '')
 							include "../pages/home.php";
 						elseif(isset($_GET['page']) && $_GET['page'] != '') {
-							if(file_exists("../pages/".$_GET['page'].".php"))
-								include "../pages/".$_GET['page'].".php";
+							$url = explode('?', $_GET['page']);
+							if(file_exists("../pages/".$url[0].".php"))
+								include "../pages/".$url[0].".php";
 							else {
 								echo '
 									<h1 class="text-center mt-5">Desculpe, esta página não existe!</h1>
